@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<li class="breadcrumb-item active">My account</li>
+{% endblock title %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-10">
+        <form method="POST" novalidate>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-success">Save changes</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}
